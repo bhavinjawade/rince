@@ -274,7 +274,7 @@ def main():
 
     # build optimizer
     if torch.cuda.device_count() > 1:
-        optimizer = set_optimizer(opt, criterion.module.backbone_q)
+        optimizer = set_optimizer(opt, criterion.backbone_q.module)
     else:
         optimizer = set_optimizer(opt, criterion.backbone_q)
 
